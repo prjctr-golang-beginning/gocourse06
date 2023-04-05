@@ -39,15 +39,15 @@ func PredispositionGenerator() string {
 	r := rand.Intn(3)
 
 	switch r {
-	case 0:
-		return `strength`
-	case 1:
-		return `body`
-	case 2:
-		return `brain`
 	default:
 		fallthrough
 	case 3:
 		return `nothing`
+	case 2:
+		return `brain`
+	case 1:
+		return `body`
+	case 0:
+		return `strength`
 	}
 }

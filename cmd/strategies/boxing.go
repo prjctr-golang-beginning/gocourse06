@@ -6,7 +6,7 @@ type Boxing struct {
 }
 
 func (b Boxing) Name() string {
-	return `boxing`
+	return `Boxing`
 }
 
 func (b Boxing) TestChild(child core.Child) bool {
