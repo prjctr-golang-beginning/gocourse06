@@ -7,6 +7,8 @@ import (
 	"time"
 )
 
+var _ core.Child = &Child{}
+
 type Child struct {
 	age            int
 	predisposition string

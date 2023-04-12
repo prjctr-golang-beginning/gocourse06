@@ -17,6 +17,10 @@ func main() {
 	}
 	// children generator
 	CheckChildren(sportSet)
+
+	// exercises
+	// 1. Створити інтерфейс кавоварки і його імплементацію
+	// 2. Навчити кавоварку варити на арабіці і на бленді (інтерфейс кави і дви стратегії)
 }
 
 func CheckChildren(sportSet []core.Sport) {
