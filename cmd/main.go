@@ -63,6 +63,7 @@ func main() {
 					fmt.Printf("Patient retrieved: %s, Age: %d, BloodType: %s\n", patient.Name, patient.Age, patient.BloodType)
 				} else {
 					fmt.Printf("Patient not found with ID: %s", id)
+					return
 				}
 			case <-quitChan:
 				fmt.Println("Clinic closed.")
@@ -74,6 +75,10 @@ func main() {
 	// Симуляція додавання пацієнтів
 	addPatientChan <- Patient{"1", "Mike Doe", 35, "A+"}
 	addPatientChan <- Patient{"2", "Mika Smith", 20, "O-"}
+
+	c.ForcedLock() // Example for deadlock
+
+	addPatientChan <- Patient{"3", "Mika Smith", 33, "AO-"}
 
 	// Симуляція запиту на отримання даних пацієнта
 	getPatientChan <- "1"
