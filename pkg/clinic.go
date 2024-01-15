@@ -30,6 +30,10 @@ func (c *Clinic) GetPatient(id string) (Patient, bool) {
 	return p, exists
 }
 
+func (c *Clinic) Patients() map[string]Patient {
+	return c.patients
+}
+
 func (c *Clinic) ForcedLock() {
 	c.mu.Lock()
 }

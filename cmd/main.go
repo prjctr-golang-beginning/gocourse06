@@ -19,6 +19,7 @@ func main() {
 	patients := []Patient{
 		{"1", "John Doe", 30, "A+"},
 		{"2", "Jane Smith", 25, "O-"},
+		{"3", "Will Smith", 50, "C-"},
 		// Додайте більше пацієнтів тут
 	}
 
@@ -32,7 +33,7 @@ func main() {
 		}(p)
 	}
 	wg.Wait()
-	fmt.Println("All patients added to the clinic.")
+	fmt.Printf("%d patients added to the clinic.\n", len(c.Patients()))
 
 	// Синхронізація Горутин: Координація між медичними відділами
 	bloodTypes := []string{"A+", "O-", "B+", "AB+"}
@@ -76,7 +77,7 @@ func main() {
 	addPatientChan <- Patient{"1", "Mike Doe", 35, "A+"}
 	addPatientChan <- Patient{"2", "Mika Smith", 20, "O-"}
 
-	c.ForcedLock() // Example for deadlock
+	//c.ForcedLock() // Example for deadlock
 
 	addPatientChan <- Patient{"3", "Mika Smith", 33, "AO-"}
 
